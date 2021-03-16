@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
+			 xmlns:local="clr-namespace:mmpk_annotation_layer_issue;assembly=mmpk_annotation_layer_issue"
+             x:Class="mmpk_annotation_layer_issue.MapPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<local:MapViewModel x:Key="MapViewModel" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<StackLayout>
+        <StackLayout WidthRequest="300" Margin="15">
+            <Label Text="Step 1."/>
+            <Button x:Name="OfflineMapAreaButton" Text="Download Data" Clicked="DownloadButton_Clicked"/>
+            <Label x:Name="DownloadMapAreaStatusLabel"/>
+            <Label Text="Step 2."/>
+            <Button x:Name="ActivateMapAreaButton" Text="Activate Offline Map Area" IsEnabled="False" Clicked="ActivateButton_Clicked"/>
+            <Label Text="Step 3."/>
+            <Label x:Name="UpdateStatusLabel"/>
+            <Button x:Name="UpdateFeatureButton" Text="Update Feature" IsEnabled="False" Clicked="UpdateFeatureButton_Clicked"/>
+
+        </StackLayout>
+        <esriUI:MapView x:Name="TheMap" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+	</StackLayout>
+</ContentPage>
